@@ -14,6 +14,7 @@ import {
 
 export default useSignup as UseSignup<typeof handler>
 
+
 export const handler: MutationHook<SignupHook> = {
   fetchOptions: {
     query: customerCreateMutation,
@@ -41,6 +42,7 @@ export const handler: MutationHook<SignupHook> = {
           lastName,
           email,
           password,
+          acceptsMarketing: true,
         },
       },
     })

@@ -15,8 +15,10 @@ export const DropdownContent = React.forwardRef<
     React.RefAttributes<HTMLDivElement>
 >(function DropdownContent({ children, className, ...props }, forwardedRef) {
   return (
-    <DropdownMenu.Content ref={forwardedRef} sideOffset={8} {...props}>
-      <div className={cn(s.root, className)}>{children}</div>
-    </DropdownMenu.Content>
+    <DropdownMenu.Portal>
+      <DropdownMenu.Content ref={forwardedRef} sideOffset={8} {...props}>
+        <div className={cn(s.root, className)}>{children}</div>
+      </DropdownMenu.Content>
+    </DropdownMenu.Portal>
   )
 })
